@@ -17,7 +17,7 @@ export const TooltipWrapper = ({
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger>{children}</TooltipTrigger>
-                <TooltipContent className="bg-black border-neutral-900" side={side} align={align}>{label}</TooltipContent>
+                <TooltipContent className="bg-black border-neutral-900 text-xs" side={side} align={align}>{label}</TooltipContent>
             </Tooltip>
         </TooltipProvider>
     )
