@@ -14,8 +14,8 @@ export const HomeSection = () => {
                         <h1 className="text-4xl font-bold uppercase text-neutral-400 leading-relaxed tracking-tighter">Hello, I'm</h1>
                         <h1 className="text-7xl font-gliker leading-none tracking-tight text-green-gradient">Shubham, A Web Developer</h1>
                     </div>
-                    <div className="mt-8 max-w-md">
-                        <p className="leading-relaxed text-neutral-400">Experienced full-stack developer with Expertise in Diverse Technologies.</p>
+                    <div className="mt-8 max-w-sm">
+                        <p className="leading-relaxed text-neutral-400">Experienced full-stack developer with expertise in diverse technologies.</p>
                     </div>
                     <div className="mt-8 w-fit">
                         <LetsTalkButton />

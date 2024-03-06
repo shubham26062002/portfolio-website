@@ -6,6 +6,6 @@ export const ScrollProgressbar = () => {
     const { scrollYProgress } = useScroll()
 
     return (
-        <motion.div className="fixed h-2 top-0 left-0 right-0 lg:right-[101.4px] bg-coral-pink origin-left" style={{ scaleX: scrollYProgress }}></motion.div>
+        <motion.div className="fixed z-50 h-2 top-0 left-0 right-0 lg:right-[101.4px] bg-coral-pink origin-left" style={{ scaleX: scrollYProgress }}></motion.div>
     )
 }

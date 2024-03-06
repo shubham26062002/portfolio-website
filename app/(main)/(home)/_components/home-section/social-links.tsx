@@ -5,7 +5,7 @@ import { IconLinksWrapper } from '../icon-links-wrapper'
 export const SocialLinks = () => {
     const socialLinksData = [
         {
-            label: 'Github',
+            label: 'GitHub',
             icon: BsGithub,
             href: '#',
         }, {
