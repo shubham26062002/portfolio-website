@@ -5,6 +5,7 @@ import localFont from 'next/font/local'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 import '@/app/globals.css'
+import { Toaster } from 'react-hot-toast'
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -45,9 +46,12 @@ const RootLayout = ({
   children,
 }: RootLayoutProps) => {
   return (
-    <html className={cn('h-full text-sm md:text-base lg:text-lg', gliker.variable)} lang="en" suppressHydrationWarning>
+    <html className={cn('h-full scroll-smooth text-sm md:text-base lg:text-lg', gliker.variable)} lang="en" suppressHydrationWarning>
       <body className={cn('h-full bg-hero-image bg-fixed bg-no-repeat bg-center bg-cover lg:bg-contain', lexend.className)}>
-        <ThemeProvider attribute="class" defaultTheme="dark">{children}</ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Toaster position="bottom-right" />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

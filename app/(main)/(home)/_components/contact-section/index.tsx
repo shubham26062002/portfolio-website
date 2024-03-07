@@ -4,6 +4,8 @@ import { FiSmartphone } from 'react-icons/fi'
 import { SectionWrapper } from '../section-wrapper'
 import { ContactCard } from './contact-card'
 import { SocialLinks } from './social-links'
+import { ContactForm } from './contact-form'
+import { Container } from '../container'
 
 export const ContactSection = () => {
     const contactCardsData = [
@@ -39,6 +41,9 @@ export const ContactSection = () => {
                         <SocialLinks />
                     </div>
                 </div>
+                <Container className="flex-1" title="Let's reach out!" hoverColor="coral-pink">
+                    <ContactForm />
+                </Container>
             </div>
         </SectionWrapper>
     )
