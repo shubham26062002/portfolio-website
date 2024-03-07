@@ -3,17 +3,22 @@ import { HomeSection } from './_components/home-section'
 import { AboutSection } from './_components/about-section'
 import { SkillsSection } from './_components/skills-section'
 import { PortfolioSection } from './_components/portfolio-section'
+import { ContactSection } from './_components/contact-section'
+import { Footer } from './_components/footer'
 
 const HomePage = () => {
   return (
-    <ActiveSectionHandler>
-      <HomeSection />
-      <AboutSection />
-      <SkillsSection />
-      <section className="min-h-screen section" id="services">Services</section>
-      <PortfolioSection />
-      <section className="min-h-screen section" id="contact">Contact</section>
-    </ActiveSectionHandler>
+    <>
+      <ActiveSectionHandler>
+        <HomeSection />
+        <AboutSection />
+        <SkillsSection />
+        <section className="min-h-screen section" id="services">Services</section>
+        <PortfolioSection />
+        <ContactSection />
+      </ActiveSectionHandler>
+      <Footer />
+    </>
   )
 }
 
