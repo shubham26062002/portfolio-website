@@ -1,6 +1,6 @@
 'use server'
 
-// import { ContactFormEntry } from '@prisma/client'
+import { ContactFormEntry } from '@prisma/client'
 import { Resend } from 'resend'
 
 import { prisma } from '@/lib/prisma'
@@ -21,7 +21,7 @@ export const addContactFormEntry = async (data: ContactFormData) => {
     return contactFormEntry
 }
 
-export const sendResponseEmail = async (data: ContactFormData) => {
+export const sendResponseEmail = async (data: ContactFormEntry) => {
     const subject = 'Thank you for reaching out!'
 
     const htmlContent = `<h1>Hello ${data.firstName} ${data.lastName},</h1>
@@ -37,12 +37,13 @@ export const sendResponseEmail = async (data: ContactFormData) => {
         to: data.email,
         subject: subject,
         html: htmlContent,
+        reply_to: process.env.OWNER_EMAIL,
     })
 
     return
 }
 
-export const sendNotificationEmail = async (data: ContactFormData) => {
+export const sendNotificationEmail = async (data: ContactFormEntry) => {
     const subject = 'New contact form entry received.'
 
     const htmlContent = `<h1>New contact form entry received.</h1>
@@ -50,7 +51,8 @@ export const sendNotificationEmail = async (data: ContactFormData) => {
     <p><strong>Last Name:</strong> ${data.lastName}</p>
     <p><strong>Email:</strong> ${data.email}</p>
     <p><strong>Subject:</strong> ${data.subject}</p>
-    <p><strong>Message:</strong> ${data.message}</p>`
+    <p><strong>Message:</strong> ${data.message}</p>
+    <p><strong>Received At:</strong> ${data.createdAt}</p>`
 
     await resend.emails.send({
         from: process.env.RESEND_SENDER_EMAIL!,
